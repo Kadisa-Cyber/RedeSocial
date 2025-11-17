@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Fléshi - Perfil</title>
-</head>
-<body>
-<h1>Perfil do usuário: {{username}}</h1>
+{% extends "homepage.html" %}
 
-<a href="/"> Acessar perfil</a>
+{% block title %}
+    Fléshi - Perfil
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+   <body>
+        <h1>Fléshi - Perfil</h1>
+
+        <a href="{{ url_for('homepage') }}">Sair</a>
+
+    </body>
+{% endblock %}
