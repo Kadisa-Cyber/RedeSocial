@@ -5,10 +5,93 @@
 {% endblock %}
 
 {% block body %}
-   <body>
-        <h1>Fléshi - Perfil</h1>
+<body>
 
-        <a href="{{ url_for('homepage') }}">Sair</a>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5ff;
+            font-family: "Inter", sans-serif;
+        }
 
-    </body>
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 32px;
+            color: #4a3799;
+            font-weight: 700;
+        }
+
+        .profile-container {
+            max-width: 520px;
+            margin: 40px auto;
+            padding: 35px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .username {
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #7a4dff;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: #6937ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(122, 77, 255, 0.3);
+        }
+
+        .foto-width{
+            width:400px;
+        }
+
+        .fotos-container{
+            margin-top: 20px;
+        }
+    </style>
+
+    <h1>Perfil do Usuário</h1>
+
+    <div class="profile-container">
+        <div class="username">
+            {{ user.username }}
+        </div>
+
+        {% if form %}
+            <form method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+
+                {{ form.photo() }}
+                {{ form.submit() }}
+            </form>
+        {% endif %}
+
+        <a class="logout-btn" href="{{ url_for('logout') }}">
+            Sair
+        </a>
+        {% for photo in user.photos %}
+            <div class="fotos-container">
+                <img class="foto-width" src="{{ url_for('static', filename='posts_photos/' ~ photo.file_name) }}" alt="Foto do usuário">
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
 {% endblock %}

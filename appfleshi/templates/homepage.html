@@ -1,16 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>
-        {% block title %}
-        Fléshi - Página Inicial
+        {% block title  %}
+            Fléshi - Página inicial
         {% endblock %}
     </title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5ff;
+            font-family: "Inter", sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 32px;
+            color: #4a3799;
+            font-weight: 700;
+        }
+
+        .form-container {
+            max-width: 420px;
+            margin: 40px auto;
+            padding: 35px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        form input {
+            width: 100%;
+            margin-bottom: 18px;
+            padding: 12px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        form input:focus {
+            border-color: #7a4dff;
+            box-shadow: 0 0 0 3px rgba(122, 77, 255, 0.2);
+            outline: none;
+        }
+
+        form input[type="submit"] {
+            background: #7a4dff;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+            margin-top: 5px;
+        }
+
+        form input[type="submit"]:hover {
+            background: #6937ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(122, 77, 255, 0.3);
+        }
+    </style>
 </head>
-    {% block body %}
-    <body>
-        <h1>Fléshi - Página Inicial</h1>
-    </body>
+
+{% block body %}
+<body>
+
+    <h1>Fléshi - Página inicial</h1>
+
+    {% block form %}
+    <div class="form-container">
+        <form method="post">
+            {{ form.csrf_token }}
+
+            {{ form.email.label() }}
+            {{ form.email() }}
+
+            {{ form.password.label() }}
+            {{ form.password() }}
+
+            {{ form.submit() }}
+        </form>
+    </div>
     {% endblock %}
+</body>
+{% endblock %}
 </html>
