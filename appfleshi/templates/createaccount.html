@@ -26,7 +26,8 @@
 
     form label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        margin-top: 10px;
         font-weight: 600;
         color: #333;
         font-size: 14px;
@@ -34,7 +35,7 @@
 
     form input {
         width: 100%;
-        margin-bottom: 18px;
+        margin-bottom: 5px;
         padding: 12px;
         border: 1px solid #dcdcdc;
         border-radius: 8px;
@@ -55,13 +56,29 @@
         cursor: pointer;
         border: none;
         transition: 0.2s;
-        margin-top: 5px;
+        margin-top: 20px;
     }
 
     form input[type="submit"]:hover {
         background: #6937ff;
         transform: translateY(-2px);
         box-shadow: 0 6px 18px rgba(122, 77, 255, 0.3);
+    }
+
+    .home{
+        width: 94%;
+        margin-bottom: 18px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: 0.2s;
+        color: #6937ff;
+        text-decoration: none;
+    }
+
+    .erroMsg{
+        color: red;
+        margin-bottom: 20px;
     }
 </style>
 
@@ -74,8 +91,20 @@
         {{ form.email.label() }}
         {{ form.email() }}
 
+        {% if form.email.errors %}
+            {% for erro in form.email.errors %}
+                <p class="erroMsg">{{ erro }}</p>
+            {% endfor %}
+        {% endif %}
+
         {{ form.username.label() }}
         {{ form.username() }}
+
+         {% if form.username.errors %}
+            {% for erro in form.username.errors %}
+                <p class="erroMsg">{{ erro }}</p>
+            {% endfor %}
+        {% endif %}
 
         {{ form.password.label() }}
         {{ form.password() }}
@@ -85,5 +114,6 @@
 
         {{ form.submit() }}
     </form>
+    <a class="home" href="{{ url_for('homepage') }}">Já tenho uma conta, logar</a>
 </div>
 {% endblock %}

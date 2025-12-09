@@ -72,6 +72,17 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(122, 77, 255, 0.3);
         }
+
+        .cadastrar{
+            width: 94%;
+            margin-bottom: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.2s;
+            color: #6937ff;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -93,6 +104,8 @@
 
             {{ form.submit() }}
         </form>
+
+        <a class="cadastrar" href="{{ url_for('createaccount') }}">Não tenho uma conta, cadastrar-se</a>
     </div>
     {% endblock %}
 </body>

@@ -1,0 +1,122 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Feed de Fotos
+{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5ff;
+            font-family: "Inter", sans-serif;
+        }
+
+        .feed-container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+
+        .foto-postada{
+            width: 600px;
+            height: 600px;
+            border-radius: 10px 10px 0px 0px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-width: 0px 0px 2px 0px;
+            border-style: solid;
+            border-color: #6937ff;
+            object-fit: cover;
+            flex-grow: 0;
+            margin: 20px
+            flex-shrink: 0;
+        }
+
+        .imagem-feed-username{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #6937ff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            background: #f5f5ff;
+        }
+
+        .user-photo{
+            margin-top: 10px;
+            font-weight: 900;
+             color: #6937ff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .orderImagens{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .orderImagens a{
+            text-decoration: none;
+            font-size: 24px;
+            color: 6937ff;
+        }
+
+        .scrollTop{
+            background: #6937ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 35px;
+            border-radius: 100%;
+            color: white;
+            width: 20px;
+            height: 20px;
+            position: fixed;
+            right: 60px;
+            bottom: 60px;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .scrollTop:hover{
+            border: 1px solid #6937ff;
+            background: white;
+            color: #6937ff;
+            transition: 0.5s;
+        }
+    </style>
+
+    {% include "navbar.html" %}
+
+
+    <div class="orderImagens">
+        <a href="{{ url_for('feed', order='desc') }}"> ⬆ Mais recente</a>
+        <a href="{{ url_for('feed', order='asc') }}">⬇ Mais antiga</a>
+    </div>
+
+    <a href="#" class="scrollTop">⬆</a>
+
+    <div class="feed-container">
+        {% for photo in photos %}
+        <div class="imagem-feed-username">
+             <a href="{{ url_for('profile', user_id=photo.user_id) }}">
+                 <img class="foto-postada" src="{{ url_for('static', filename='posts_photos/' ~ photo.file_name) }}" alt="Foto do usuário">
+                 <a class="user-photo" href="{{ url_for('profile', user_id=photo.user_id) }}"> [ ◉¯] {{ photo.user.username }}</a>
+             </a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

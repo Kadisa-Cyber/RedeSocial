@@ -7,6 +7,8 @@
 {% block body %}
 <body>
 
+{% include "navbar.html" %}
+
     <style>
         body {
             margin: 0;
@@ -24,7 +26,7 @@
         }
 
         .profile-container {
-            max-width: 520px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 35px;
             background: #ffffff;
@@ -58,12 +60,21 @@
             box-shadow: 0 6px 18px rgba(122, 77, 255, 0.3);
         }
 
-        .foto-width{
-            width:400px;
+        .foto-postada{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 1px solid #6937ff;
+            border-radius: 3px;
         }
 
+
         .fotos-container{
-            margin-top: 20px;
+            display: flex;
+            width:100%;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
         }
     </style>
 
@@ -83,15 +94,12 @@
             </form>
         {% endif %}
 
-        <a class="logout-btn" href="{{ url_for('logout') }}">
-            Sair
-        </a>
-        {% for photo in user.photos %}
-            <div class="fotos-container">
-                <img class="foto-width" src="{{ url_for('static', filename='posts_photos/' ~ photo.file_name) }}" alt="Foto do usuário">
-            </div>
-        {% endfor %}
-    </div>
+        <div class="fotos-container">
+            {% for photo in user.photos %}
+                <img class="foto-postada" src="{{ url_for('static', filename='posts_photos/' ~ photo.file_name) }}" alt="Foto do usuário">
+            {% endfor %}
+        </div>
+        </div>
 
 </body>
 {% endblock %}

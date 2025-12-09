@@ -1,0 +1,58 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Fléshi - Feed
+{% endblock %}
+
+{% block body %}
+<body>
+    
+    <style>
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5ff; /* Roxo claro / lavanda para o fundo */
+        }
+
+
+        nav {
+            background-color: #4a3799; /* Roxo escuro para o fundo da nav */
+            padding: 15px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+            display: flex;
+            justify-content: flex-start; /* Alinha o link à esquerda */
+        }
+
+
+        nav a {
+            color: #ffffff; /* Texto branco */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+
+        nav a:hover {
+            background-color: #7a4dff; /* Roxo mais claro (tom de destaque) */
+            transform: translateY(-1px); /* Leve levantamento */
+        }
+        
+
+
+    </style>
+
+    <nav>
+        <a href="{{ url_for('feed', order='desc') }}">Feed</a>
+         <a href="{{ url_for('profile', user_id=current_user.id) }}">Perfil</a>
+        <a href="{{ url_for('logout') }}">Sair</a>
+
+    </nav>
+
+
+</body>
+{% endblock %}
