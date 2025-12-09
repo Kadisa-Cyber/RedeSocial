@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bf6432-57ab-4e4e-8126-e9d996ee191c" name="Changes" comment="feat: create image management" />
+    <list default="true" id="e5bf6432-57ab-4e4e-8126-e9d996ee191c" name="Changes" comment="feat: ferramenta nova e front end" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -30,8 +31,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ygorfnascimento/rede_social_flesh.git&quot;,
-    &quot;accountId&quot;: &quot;bb9a6502-b4fe-47ad-859a-5a84b2241c6c&quot;
+    &quot;url&quot;: &quot;https://github.com/Kadisa-Cyber/RedeSocial.git&quot;,
+    &quot;accountId&quot;: &quot;d67570e0-4c28-4bbb-81c4-6a827afcd4c5&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -57,7 +58,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/KauanDias/3Semestre/BackEnd/rsfleshi"
+    "last_opened_file_path": "D:/KauanDias/3Semestre/BackEnd/RedeSocial"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -253,7 +254,31 @@
       <option name="project" value="LOCAL" />
       <updated>1764618634043</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: image postage">
+      <option name="closed" value="true" />
+      <created>1764697896746</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1764697896746</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: correção de bugs">
+      <option name="closed" value="true" />
+      <created>1765217376091</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765217376091</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: ferramenta nova e front end">
+      <option name="closed" value="true" />
+      <created>1765297032573</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1765297032573</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -271,6 +296,9 @@
     <MESSAGE value="feat: add login and create account feature" />
     <MESSAGE value="feat: logout the user and updating the user profile" />
     <MESSAGE value="feat: create image management" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create image management" />
+    <MESSAGE value="feat: image postage" />
+    <MESSAGE value="feat: correção de bugs" />
+    <MESSAGE value="feat: ferramenta nova e front end" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: ferramenta nova e front end" />
   </component>
 </project>
